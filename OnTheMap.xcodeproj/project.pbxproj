@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F685724B25FD809400ECD7C3 /* ParseGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F685724A25FD809400ECD7C3 /* ParseGateway.swift */; };
+		F685724D25FD846000ECD7C3 /* StudentLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F685724C25FD846000ECD7C3 /* StudentLocationModel.swift */; };
 		F688C6E625EC620100C1F10D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C6E525EC620100C1F10D /* AppDelegate.swift */; };
-		F688C6E825EC620100C1F10D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C6E725EC620100C1F10D /* ViewController.swift */; };
+		F688C6E825EC620100C1F10D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C6E725EC620100C1F10D /* SignInViewController.swift */; };
 		F688C6EB25EC620100C1F10D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F688C6E925EC620100C1F10D /* Main.storyboard */; };
 		F688C6EE25EC620100C1F10D /* OnTheMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F688C6EC25EC620100C1F10D /* OnTheMap.xcdatamodeld */; };
 		F688C6F025EC620300C1F10D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F688C6EF25EC620300C1F10D /* Assets.xcassets */; };
 		F688C6F325EC620300C1F10D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F688C6F125EC620300C1F10D /* LaunchScreen.storyboard */; };
 		F688C6FE25EC620300C1F10D /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C6FD25EC620300C1F10D /* OnTheMapTests.swift */; };
 		F688C70925EC620400C1F10D /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C70825EC620400C1F10D /* OnTheMapUITests.swift */; };
+		F688C75925EC6C9A00C1F10D /* UdacityAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C75825EC6C9A00C1F10D /* UdacityAuthenticator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F685724A25FD809400ECD7C3 /* ParseGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseGateway.swift; sourceTree = "<group>"; };
+		F685724C25FD846000ECD7C3 /* StudentLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationModel.swift; sourceTree = "<group>"; };
 		F688C6E225EC620100C1F10D /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F688C6E525EC620100C1F10D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F688C6E725EC620100C1F10D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F688C6E725EC620100C1F10D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F688C6EA25EC620100C1F10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F688C6ED25EC620100C1F10D /* OnTheMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnTheMap.xcdatamodel; sourceTree = "<group>"; };
 		F688C6EF25EC620300C1F10D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		F688C70425EC620400C1F10D /* OnTheMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F688C70825EC620400C1F10D /* OnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUITests.swift; sourceTree = "<group>"; };
 		F688C70A25EC620400C1F10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F688C75825EC6C9A00C1F10D /* UdacityAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityAuthenticator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				F688C6E525EC620100C1F10D /* AppDelegate.swift */,
-				F688C6E725EC620100C1F10D /* ViewController.swift */,
+				F688C6E725EC620100C1F10D /* SignInViewController.swift */,
 				F688C6E925EC620100C1F10D /* Main.storyboard */,
 				F688C6EF25EC620300C1F10D /* Assets.xcassets */,
 				F688C6F125EC620300C1F10D /* LaunchScreen.storyboard */,
 				F688C6F425EC620300C1F10D /* Info.plist */,
 				F688C6EC25EC620100C1F10D /* OnTheMap.xcdatamodeld */,
+				F688C75825EC6C9A00C1F10D /* UdacityAuthenticator.swift */,
+				F685724A25FD809400ECD7C3 /* ParseGateway.swift */,
+				F685724C25FD846000ECD7C3 /* StudentLocationModel.swift */,
 			);
 			path = OnTheMap;
 			sourceTree = "<group>";
@@ -260,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F688C6EE25EC620100C1F10D /* OnTheMap.xcdatamodeld in Sources */,
-				F688C6E825EC620100C1F10D /* ViewController.swift in Sources */,
+				F685724D25FD846000ECD7C3 /* StudentLocationModel.swift in Sources */,
+				F688C6E825EC620100C1F10D /* SignInViewController.swift in Sources */,
+				F685724B25FD809400ECD7C3 /* ParseGateway.swift in Sources */,
 				F688C6E625EC620100C1F10D /* AppDelegate.swift in Sources */,
+				F688C75925EC6C9A00C1F10D /* UdacityAuthenticator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
