@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="2923.1884057971015" y="18.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="E2f-31-oi4">
             <objects>
-                <viewController id="JlQ-LG-v4x" sceneMemberID="viewController">
+                <viewController id="JlQ-LG-v4x" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ght-Ti-BIa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,11 +153,41 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Hgl-X0-sK3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xIN-J4-Zr0"/>
+                    <navigationItem key="navigationItem" id="k5e-8j-dHS">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_addpin" id="Edl-8R-dLN">
+                            <connections>
+                                <segue destination="pHJ-iL-5CI" kind="push" id="Zu6-Tu-puQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_refresh" id="Hde-ge-O4G">
+                            <connections>
+                                <action selector="refreshLocations:" destination="JlQ-LG-v4x" id="IDp-EJ-Ah4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="0RA-ap-JPx" id="p8Z-Hu-0nz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tc-cN-6hC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3752.1739130434785" y="18.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KFG-nN-fdj">
+            <objects>
+                <viewController id="pHJ-iL-5CI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H8N-nl-jhf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="d2C-ln-HSG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ByY-3s-uWM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nuz-R2-LPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4737" y="3"/>
         </scene>
         <!--Item-->
         <scene sceneID="sJp-Jq-h50">
@@ -194,8 +224,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_listview-selected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
 </document>

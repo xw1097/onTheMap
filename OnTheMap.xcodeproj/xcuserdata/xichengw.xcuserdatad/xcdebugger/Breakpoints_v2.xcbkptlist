@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OnTheMap/UdacityAuthenticator.swift"
-            timestampString = "637377265.698941"
+            filePath = "OnTheMap/SignInViewController.swift"
+            timestampString = "637504448.639734"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "startSession(withUsername:withPassword:onSuccess:onError:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "onLoginSuccess()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

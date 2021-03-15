@@ -39,13 +39,16 @@ final class UdacityAuthenticator {
                         return;
                     }
                 }
+                if let uniqueKey = (parsedResult!["account"] as? [String: AnyObject])!["key"] as? String {
+                    InMemoryStore.shared.userUniqueKey = uniqueKey;
+                    print("uniqueKey is ", uniqueKey)
+                    onSuccess();
+                }
             } catch {
                 onError("Unexpected error happended");
                 return;
             }
-            
-            onSuccess();
         }
-        task.resume()
+        task.resume();
     }
 }
