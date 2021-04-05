@@ -105,7 +105,6 @@
         <scene sceneID="Ajy-z8-8Gj">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarViewController" id="fI8-CH-jsh" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="SVw-uU-CRL"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="10u-1Y-qaK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -120,11 +119,12 @@
             </objects>
             <point key="canvasLocation" x="2068.1159420289855" y="18.75"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="rVJ-Fy-mSo">
             <objects>
                 <navigationController id="cG7-Zu-1Z3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="icon_mapview-selected" id="d2z-XE-WRG"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="ISq-cq-GfO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a8i-I7-buh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,7 +154,7 @@
                         <viewLayoutGuide key="safeArea" id="Hgl-X0-sK3"/>
                     </view>
                     <navigationItem key="navigationItem" id="k5e-8j-dHS">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_addpin" id="Edl-8R-dLN">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_pin" id="Edl-8R-dLN">
                             <connections>
                                 <segue destination="pHJ-iL-5CI" kind="push" id="Zu6-Tu-puQ"/>
                             </connections>
@@ -189,11 +189,11 @@
             </objects>
             <point key="canvasLocation" x="4737" y="3"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="sJp-Jq-h50">
             <objects>
                 <navigationController id="cpy-tZ-2Jc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="icon_listview-selected" id="rWB-eF-nL0"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="rWB-eF-nL0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1dX-in-jJw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -224,9 +224,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_addpin" width="24" height="24"/>
+        <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="icon_pin" width="24" height="24"/>
         <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
