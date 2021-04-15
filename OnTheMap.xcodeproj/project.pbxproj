@@ -20,6 +20,10 @@
 		F688C6FE25EC620300C1F10D /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C6FD25EC620300C1F10D /* OnTheMapTests.swift */; };
 		F688C70925EC620400C1F10D /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C70825EC620400C1F10D /* OnTheMapUITests.swift */; };
 		F688C75925EC6C9A00C1F10D /* UdacityAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688C75825EC6C9A00C1F10D /* UdacityAuthenticator.swift */; };
+		F6D978E9261D8D78003D8450 /* StudentInformatonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978E8261D8D78003D8450 /* StudentInformatonTableViewController.swift */; };
+		F6D978EB261D9F00003D8450 /* StudentInformationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EA261D9F00003D8450 /* StudentInformationTableCell.swift */; };
+		F6D978ED2623925E003D8450 /* PostPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EC2623925E003D8450 /* PostPinViewController.swift */; };
+		F6D978EF262397F5003D8450 /* SubmitPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		F688C70825EC620400C1F10D /* OnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUITests.swift; sourceTree = "<group>"; };
 		F688C70A25EC620400C1F10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F688C75825EC6C9A00C1F10D /* UdacityAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityAuthenticator.swift; sourceTree = "<group>"; };
+		F6D978E8261D8D78003D8450 /* StudentInformatonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformatonTableViewController.swift; sourceTree = "<group>"; };
+		F6D978EA261D9F00003D8450 /* StudentInformationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationTableCell.swift; sourceTree = "<group>"; };
+		F6D978EC2623925E003D8450 /* PostPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPinViewController.swift; sourceTree = "<group>"; };
+		F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				F688C6E525EC620100C1F10D /* AppDelegate.swift */,
-				F688C6E725EC620100C1F10D /* SignInViewController.swift */,
 				F688C6E925EC620100C1F10D /* Main.storyboard */,
 				F688C6EF25EC620300C1F10D /* Assets.xcassets */,
 				F688C6F125EC620300C1F10D /* LaunchScreen.storyboard */,
@@ -121,6 +128,11 @@
 				F685724C25FD846000ECD7C3 /* StudentInformation.swift */,
 				F685724E25FD9C9600ECD7C3 /* MapViewController.swift */,
 				F685725025FDA56800ECD7C3 /* InMemoryStore.swift */,
+				F688C6E725EC620100C1F10D /* SignInViewController.swift */,
+				F6D978E8261D8D78003D8450 /* StudentInformatonTableViewController.swift */,
+				F6D978EA261D9F00003D8450 /* StudentInformationTableCell.swift */,
+				F6D978EC2623925E003D8450 /* PostPinViewController.swift */,
+				F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */,
 			);
 			path = OnTheMap;
 			sourceTree = "<group>";
@@ -276,11 +288,15 @@
 			files = (
 				F688C6EE25EC620100C1F10D /* OnTheMap.xcdatamodeld in Sources */,
 				F685724D25FD846000ECD7C3 /* StudentInformation.swift in Sources */,
+				F6D978EF262397F5003D8450 /* SubmitPinViewController.swift in Sources */,
 				F688C6E825EC620100C1F10D /* SignInViewController.swift in Sources */,
 				F685725125FDA56800ECD7C3 /* InMemoryStore.swift in Sources */,
+				F6D978ED2623925E003D8450 /* PostPinViewController.swift in Sources */,
 				F685724B25FD809400ECD7C3 /* ParseGateway.swift in Sources */,
+				F6D978EB261D9F00003D8450 /* StudentInformationTableCell.swift in Sources */,
 				F688C6E625EC620100C1F10D /* AppDelegate.swift in Sources */,
 				F688C75925EC6C9A00C1F10D /* UdacityAuthenticator.swift in Sources */,
+				F6D978E9261D8D78003D8450 /* StudentInformatonTableViewController.swift in Sources */,
 				F685724F25FD9C9600ECD7C3 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

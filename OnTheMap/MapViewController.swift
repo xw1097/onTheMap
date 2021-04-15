@@ -14,19 +14,39 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func refreshLocations(_ sender: Any) {
-        self.viewDidLoad();
+        self.viewDidLoad()
     }
     
+    @IBAction func postPin(_ sender: Any) {
+        var isDuplicate = false
+        for item in InMemoryStore.shared.cachedStudentInformations {
+            if (item.uniqueKey == InMemoryStore.shared.userUniqueKey) {
+                isDuplicate = true
+            }
+        }
+        if (isDuplicate) {
+            let alert = UIAlertController(title: "You have Already Posted a Student Location. Would You Like to Overwrite You Current Location?", message: nil, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Overwrite", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                self.performSegue(withIdentifier: "AddPinDetailPage", sender: nil);
+            }))
+            
+            self.present(alert, animated: true)
+        } else {
+            performSegue(withIdentifier: "AddPinDetailPage", sender: nil);
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        mapView.delegate = self;
-        ParseGateway.shared.getStudentLocation(onSuccess: self.fetchSuccess, onError: self.fetchError);
+        mapView.delegate = self
+        ParseGateway.shared.getStudentLocation(force: true, onSuccess: self.fetchSuccess, onError: self.fetchError)
     }
     
     private func fetchSuccess(_ locations: Array<StudentInformation>) {
         DispatchQueue.main.async {
-            InMemoryStore.shared.cachedStudentInformations = locations;
             // We will create an MKPointAnnotation for each dictionary in "locations". The
             // point annotations will be stored in this array, and then provided to the map view.
             var annotations = [MKPointAnnotation]()
@@ -98,8 +118,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
             if let toOpen = view.annotation?.subtitle! {
-                if (!toOpen.isEmpty) {
-                    app.open(URL(string: toOpen)!);
+                if (app.canOpenURL(URL(string: toOpen)!)) {
+                    app.open(URL(string: toOpen)!)
                 }
             }
         }

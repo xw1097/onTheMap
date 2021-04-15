@@ -35,7 +35,7 @@ class SignInViewController: UIViewController {
     
     private func setLoginErrorText(_ text: String) {
         DispatchQueue.main.async {
-            self.loginErrorTextDisplay.text = text;
+            self.loginErrorTextDisplay.text = text
         }
     }
     
