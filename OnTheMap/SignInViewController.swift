@@ -8,17 +8,21 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: KeyboardAwareViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextView: UITextField!
     @IBOutlet weak var passwordTextView: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginErrorTextDisplay: UILabel!
+
+    private var currentEditingTextField : UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setLoginErrorText("");
+        self.emailTextView.delegate = self
+        self.passwordTextView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -44,6 +48,27 @@ class SignInViewController: UIViewController {
             let controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController
             self.present(controller, animated: true, completion: nil)
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.currentEditingTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.currentEditingTextField = nil
+    }
+    
+    override func isKeyBoardAwareComponentEditing() -> Bool {
+        if (self.currentEditingTextField != nil) {
+            return self.currentEditingTextField! == self.passwordTextView
+        }
+        return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.currentEditingTextField = nil
+        textField.resignFirstResponder()
+        return true
     }
 }
 

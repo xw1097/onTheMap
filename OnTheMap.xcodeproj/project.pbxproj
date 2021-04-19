@@ -24,6 +24,7 @@
 		F6D978EB261D9F00003D8450 /* StudentInformationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EA261D9F00003D8450 /* StudentInformationTableCell.swift */; };
 		F6D978ED2623925E003D8450 /* PostPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EC2623925E003D8450 /* PostPinViewController.swift */; };
 		F6D978EF262397F5003D8450 /* SubmitPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */; };
+		F6D978F1262D3E90003D8450 /* KeyboardAwareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978F0262D3E90003D8450 /* KeyboardAwareViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F6D978EA261D9F00003D8450 /* StudentInformationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationTableCell.swift; sourceTree = "<group>"; };
 		F6D978EC2623925E003D8450 /* PostPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPinViewController.swift; sourceTree = "<group>"; };
 		F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPinViewController.swift; sourceTree = "<group>"; };
+		F6D978F0262D3E90003D8450 /* KeyboardAwareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				F6D978EA261D9F00003D8450 /* StudentInformationTableCell.swift */,
 				F6D978EC2623925E003D8450 /* PostPinViewController.swift */,
 				F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */,
+				F6D978F0262D3E90003D8450 /* KeyboardAwareViewController.swift */,
 			);
 			path = OnTheMap;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				F685725125FDA56800ECD7C3 /* InMemoryStore.swift in Sources */,
 				F6D978ED2623925E003D8450 /* PostPinViewController.swift in Sources */,
 				F685724B25FD809400ECD7C3 /* ParseGateway.swift in Sources */,
+				F6D978F1262D3E90003D8450 /* KeyboardAwareViewController.swift in Sources */,
 				F6D978EB261D9F00003D8450 /* StudentInformationTableCell.swift in Sources */,
 				F688C6E625EC620100C1F10D /* AppDelegate.swift in Sources */,
 				F688C75925EC6C9A00C1F10D /* UdacityAuthenticator.swift in Sources */,
@@ -473,12 +477,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SV6HZ8R3MY;
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xichengw.onTheMap.OnTheMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xichengw.onTheMap.OnTheMap9119;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,12 +495,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SV6HZ8R3MY;
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xichengw.onTheMap.OnTheMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xichengw.onTheMap.OnTheMap9119;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
