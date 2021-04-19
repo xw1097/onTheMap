@@ -86,10 +86,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     
     private func fetchError(_ errorText: String) {
-        // alert user
+        let alert = UIAlertController(title: "Failed to fetch info, please retry", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
     }
-    
-
     
     // MARK: - MKMapViewDelegate
     
@@ -116,11 +117,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // to the URL specified in the annotationViews subtitle property.
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
-            let app = UIApplication.shared
             if let toOpen = view.annotation?.subtitle! {
-                if (app.canOpenURL(URL(string: toOpen)!)) {
-                    app.open(URL(string: toOpen)!)
-                }
+                Utils.openUrl(urlToOpen: toOpen)
             }
         }
     }

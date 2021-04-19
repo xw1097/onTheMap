@@ -25,6 +25,7 @@
 		F6D978ED2623925E003D8450 /* PostPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EC2623925E003D8450 /* PostPinViewController.swift */; };
 		F6D978EF262397F5003D8450 /* SubmitPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */; };
 		F6D978F1262D3E90003D8450 /* KeyboardAwareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978F0262D3E90003D8450 /* KeyboardAwareViewController.swift */; };
+		F6D978F3262D57D2003D8450 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D978F2262D57D2003D8450 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		F6D978EC2623925E003D8450 /* PostPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPinViewController.swift; sourceTree = "<group>"; };
 		F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPinViewController.swift; sourceTree = "<group>"; };
 		F6D978F0262D3E90003D8450 /* KeyboardAwareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareViewController.swift; sourceTree = "<group>"; };
+		F6D978F2262D57D2003D8450 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				F6D978EC2623925E003D8450 /* PostPinViewController.swift */,
 				F6D978EE262397F5003D8450 /* SubmitPinViewController.swift */,
 				F6D978F0262D3E90003D8450 /* KeyboardAwareViewController.swift */,
+				F6D978F2262D57D2003D8450 /* Utils.swift */,
 			);
 			path = OnTheMap;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				F688C6EE25EC620100C1F10D /* OnTheMap.xcdatamodeld in Sources */,
 				F685724D25FD846000ECD7C3 /* StudentInformation.swift in Sources */,
 				F6D978EF262397F5003D8450 /* SubmitPinViewController.swift in Sources */,
+				F6D978F3262D57D2003D8450 /* Utils.swift in Sources */,
 				F688C6E825EC620100C1F10D /* SignInViewController.swift in Sources */,
 				F685725125FDA56800ECD7C3 /* InMemoryStore.swift in Sources */,
 				F6D978ED2623925E003D8450 /* PostPinViewController.swift in Sources */,

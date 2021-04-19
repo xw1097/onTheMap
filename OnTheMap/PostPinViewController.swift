@@ -65,6 +65,11 @@ class PostPinViewController: UIViewController, UITextViewDelegate {
         let studentInfo = sender as! StudentInformation;
         submitPinVC.studentInfo = studentInfo;
     }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
 
     
 }

@@ -28,7 +28,10 @@ class StudentInformationTableViewController: UITableViewController {
     }
     
     private func fetchError(_ errorText: String) {
-        // alert user
+        let alert = UIAlertController(title: "Failed to fetch info, please retry", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,5 +50,11 @@ class StudentInformationTableViewController: UITableViewController {
         cell?.nameLabel!.text = student.firstName + " " + student.lastName
         
         return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mediaURL = InMemoryStore.shared.cachedStudentInformations[indexPath.row].mediaURL
+        Utils.openUrl(urlToOpen: mediaURL)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
