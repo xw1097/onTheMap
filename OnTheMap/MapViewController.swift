@@ -17,6 +17,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.viewDidLoad()
     }
     
+    @IBAction func logOut(_ sender: Any) {
+        UdacityAuthenticator.shared.deleteSession(
+            onSuccess: self.logOutSuccess,
+            onError: self.onError)
+    }
+    
     @IBAction func postPin(_ sender: Any) {
         var isDuplicate = false
         for item in InMemoryStore.shared.cachedStudentInformations {
@@ -90,6 +96,20 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         self.present(alert, animated: true)
+    }
+    
+    private func onError(_ error: String) {
+        let alert = UIAlertController(title: "Logout failed, please try again", message: error, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    private func logOutSuccess() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - MKMapViewDelegate

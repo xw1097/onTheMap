@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947.82608695652186" y="18.75"/>
+            <point key="canvasLocation" x="1258" y="19"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ajy-z8-8Gj">
@@ -201,16 +201,23 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="On The Maps" id="k5e-8j-dHS" userLabel="On The Maps">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_pin" id="Edl-8R-dLN" userLabel="Add Pin">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="Xkm-Xj-QXK" userLabel="LogOut">
                             <connections>
-                                <action selector="postPin:" destination="JlQ-LG-v4x" id="hff-ro-Xza"/>
+                                <action selector="logOut:" destination="JlQ-LG-v4x" id="88z-3U-cAI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_refresh" id="Hde-ge-O4G">
-                            <connections>
-                                <action selector="refreshLocations:" destination="JlQ-LG-v4x" id="IDp-EJ-Ah4"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="icon_refresh" id="Hde-ge-O4G">
+                                <connections>
+                                    <action selector="refreshLocations:" destination="JlQ-LG-v4x" id="IDp-EJ-Ah4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="icon_pin" id="Edl-8R-dLN" userLabel="Add Pin">
+                                <connections>
+                                    <action selector="postPin:" destination="JlQ-LG-v4x" id="hff-ro-Xza"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -220,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tc-cN-6hC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3752.1739130434785" y="18.75"/>
+            <point key="canvasLocation" x="3709" y="29"/>
         </scene>
         <!--Post Pin View Controller-->
         <scene sceneID="KFG-nN-fdj">
@@ -414,6 +421,7 @@
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qDa-yJ-fxF"/>
+        <segue reference="nZZ-0k-ygx"/>
+        <segue reference="FIo-Nb-9zd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -45,6 +45,8 @@ class SignInViewController: KeyboardAwareViewController, UITextFieldDelegate {
     
     private func onLoginSuccess() {
         DispatchQueue.main.async {
+            self.emailTextView.text = ""
+            self.passwordTextView.text = ""
             let controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController
             self.present(controller, animated: true, completion: nil)
         }
