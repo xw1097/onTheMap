@@ -14,9 +14,10 @@ class PostPinViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var locationTextView: UITextView!
     
-    
     @IBAction func findOnTheMapAction(_ sender: Any) {
+        self.renderSpinner()
         self.getCoordinate(addressString: self.locationTextView.text, completionHandler: {coord, error in
+            self.dismissSpinner()
             if (error != nil) {
                 let alert = UIAlertController(title: "Error converting your location into geocode", message: nil, preferredStyle: .alert)
                 
@@ -66,8 +67,11 @@ class PostPinViewController: UIViewController, UITextViewDelegate {
         submitPinVC.studentInfo = studentInfo;
     }
     
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        textView.resignFirstResponder()
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
         return true
     }
 

@@ -30,6 +30,7 @@ class SignInViewController: KeyboardAwareViewController, UITextFieldDelegate {
         self.setLoginErrorText("");
         let username = emailTextView.text!
         let password = passwordTextView.text!
+        self.renderSpinner()
         UdacityAuthenticator.shared.startSession(withUsername: username, withPassword: password, onSuccess: self.onLoginSuccess, onError: self.setLoginErrorText)
     }
     
@@ -39,12 +40,14 @@ class SignInViewController: KeyboardAwareViewController, UITextFieldDelegate {
     
     private func setLoginErrorText(_ text: String) {
         DispatchQueue.main.async {
+            self.dismissSpinner()
             self.loginErrorTextDisplay.text = text
         }
     }
     
     private func onLoginSuccess() {
         DispatchQueue.main.async {
+            self.dismissSpinner()
             self.emailTextView.text = ""
             self.passwordTextView.text = ""
             let controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController

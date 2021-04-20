@@ -17,3 +17,23 @@ class Utils {
         }
     }
 }
+
+fileprivate var spinnerView: UIView?
+
+extension UIViewController {
+    // render a spinner view on top existing VC
+    func renderSpinner() {
+        spinnerView = UIView(frame: self.view.bounds)
+        spinnerView!.backgroundColor = .white
+        let spinner = UIActivityIndicatorView(style: .whiteLarge)
+        spinner.color = .gray
+        spinner.center = spinnerView!.center
+        spinnerView!.addSubview(spinner)
+        spinner.startAnimating()
+        self.view.addSubview(spinnerView!)
+    }
+    
+    func dismissSpinner() {
+        spinnerView?.removeFromSuperview()
+    }
+}
