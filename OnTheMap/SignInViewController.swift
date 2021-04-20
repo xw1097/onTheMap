@@ -50,8 +50,7 @@ class SignInViewController: KeyboardAwareViewController, UITextFieldDelegate {
             self.dismissSpinner()
             self.emailTextView.text = ""
             self.passwordTextView.text = ""
-            let controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController
-            self.present(controller, animated: true, completion: nil)
+            self.performSegue(withIdentifier: "showTabBarViewController", sender: self);
         }
     }
     

@@ -13,46 +13,18 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
-    @IBAction func refreshLocations(_ sender: Any) {
-        self.viewDidLoad()
-    }
-    
-    @IBAction func logOut(_ sender: Any) {
-        UdacityAuthenticator.shared.deleteSession(
-            onSuccess: self.logOutSuccess,
-            onError: self.onError)
-    }
-    
-    @IBAction func postPin(_ sender: Any) {
-        var isDuplicate = false
-        for item in InMemoryStore.shared.cachedStudentInformations {
-            if (item.uniqueKey == InMemoryStore.shared.userUniqueKey) {
-                isDuplicate = true
-            }
-        }
-        if (isDuplicate) {
-            let alert = UIAlertController(title: "You have Already Posted a Student Location. Would You Like to Overwrite You Current Location?", message: nil, preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Overwrite", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
-                self.performSegue(withIdentifier: "AddPinDetailPage", sender: nil);
-            }))
-            
-            self.present(alert, animated: true)
-        } else {
-            performSegue(withIdentifier: "AddPinDetailPage", sender: nil);
-        }
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad();
         mapView.delegate = self
-        ParseGateway.shared.getStudentLocation(force: true, onSuccess: self.fetchSuccess, onError: self.fetchError)
+        StudentDataNotifier.shared.subscribe(StudentDataNotifier.MAP_VIEW_SUBSCRIBER_NAME, callback: self.onLocationsChange)
+        if (InMemoryStore.shared.cachedStudentInformations.count > 0) {
+            self.onLocationsChange()
+        }
     }
     
-    private func fetchSuccess(_ locations: Array<StudentInformation>) {
+    private func onLocationsChange() {
         DispatchQueue.main.async {
+            let locations = InMemoryStore.shared.cachedStudentInformations
             // We will create an MKPointAnnotation for each dictionary in "locations". The
             // point annotations will be stored in this array, and then provided to the map view.
             var annotations = [MKPointAnnotation]()
@@ -61,7 +33,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             // to create map annotations. This would be more stylish if the dictionaries were being
             // used to create custom structs. Perhaps StudentLocation structs.
             
-            for location in locations {
+            for location in locations! {
                 
                 // Notice that the float values are being used to create CLLocationDegree values.
                 // This is a version of the Double type.
@@ -89,28 +61,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             self.mapView.addAnnotations(annotations)
         }
     }
-
-    
-    private func fetchError(_ errorText: String) {
-        let alert = UIAlertController(title: "Failed to fetch info, please retry", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        self.present(alert, animated: true)
-    }
-    
-    private func onError(_ error: String) {
-        let alert = UIAlertController(title: "Logout failed, please try again", message: error, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        self.present(alert, animated: true)
-    }
-    
-    private func logOutSuccess() {
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
     
     // MARK: - MKMapViewDelegate
     
@@ -125,8 +75,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             pinView!.canShowCallout = true
             pinView!.pinColor = .red
             pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        }
-        else {
+        } else {
             pinView!.annotation = annotation
         }
         

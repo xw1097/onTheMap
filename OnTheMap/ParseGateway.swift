@@ -11,10 +11,7 @@ import Foundation
 final class ParseGateway {
     static let shared = ParseGateway()
     
-    public func getStudentLocation(force: Bool, onSuccess: @escaping (Array<StudentInformation>) -> (), onError: @escaping (String) -> ()) {
-        if (force == false && InMemoryStore.shared.cachedStudentInformations.count > 0) {
-            return
-        }
+    public func getStudentLocation(onSuccess: @escaping (Array<StudentInformation>) -> (), onError: @escaping (String) -> ()) {
         var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation?limit=100&order=-updatedAt")!)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
@@ -31,7 +28,6 @@ final class ParseGateway {
                         locations.append(studentLocaltion)
                     }
                 }
-                InMemoryStore.shared.cachedStudentInformations = locations;
                 onSuccess(locations)
             } catch {
                 onError("Could not parse the data as JSON: '\(data)'")

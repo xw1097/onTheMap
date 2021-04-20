@@ -11,22 +11,16 @@ import UIKit
 
 class StudentInformationTableViewController: UITableViewController {
     static let CELL_REUSABLE_ID = "StudentInformationTableViewCell"
+    
     @IBAction func refreshLocations(_ sender: Any) {
-        self.viewDidLoad();
+        self.viewDidLoad()
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad();
-        // get cached information
-        ParseGateway.shared.getStudentLocation(force: false, onSuccess: self.fetchSuccess, onError: self.fetchError);
+        super.viewDidLoad()
+        StudentDataNotifier.shared.subscribe(StudentDataNotifier.MAP_VIEW_SUBSCRIBER_NAME, callback: self.viewDidLoad)
     }
 
-    private func fetchSuccess(_ locations: Array<StudentInformation>) {
-        DispatchQueue.main.async {
-            InMemoryStore.shared.cachedStudentInformations = locations;
-        }
-    }
-    
     private func fetchError(_ errorText: String) {
         let alert = UIAlertController(title: "Failed to fetch info, please retry", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
