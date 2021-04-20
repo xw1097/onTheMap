@@ -33,7 +33,7 @@ class SubmitPinViewController: UIViewController, UITextViewDelegate  {
     private func onError(_ error: String) {
         DispatchQueue.main.async {
             self.dismissSpinner()
-            let alert = UIAlertController(title: "error", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Somethign went wrong, please try again", message: error, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             
