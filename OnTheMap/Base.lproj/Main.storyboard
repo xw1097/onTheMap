@@ -288,7 +288,7 @@
                     <connections>
                         <outlet property="linkToShare" destination="v8L-M7-L4Z" id="Oec-S5-nYd"/>
                         <outlet property="mapView" destination="HhW-Z8-WhQ" id="rxl-N9-xrv"/>
-                        <segue destination="7BJ-Fd-cmr" kind="showDetail" identifier="backToMapSegue" id="Fy8-Bm-WDF"/>
+                        <segue destination="0wM-QH-3da" kind="showDetail" identifier="backToMapSegue" id="GeM-Ug-EMv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoZ-G4-XEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,14 +352,7 @@
                             <outlet property="delegate" destination="qzS-xO-1Hb" id="bzU-Fq-hNc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="On The Map" id="YuP-h8-X47" userLabel="On The Maps">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_pin" id="iMK-f5-umC" userLabel="Add Pin"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_refresh" id="8bz-wn-kdU">
-                            <connections>
-                                <action selector="refreshLocations:" destination="JlQ-LG-v4x" id="Fk0-rA-vfG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="On The Map" id="YuP-h8-X47" userLabel="On The Maps"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOo-8d-I7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -415,6 +408,7 @@
                         <segue destination="cG7-Zu-1Z3" kind="relationship" relationship="viewControllers" id="mNy-7g-13g"/>
                         <segue destination="cpy-tZ-2Jc" kind="relationship" relationship="viewControllers" id="tq7-Ay-Yi2"/>
                         <segue destination="pHJ-iL-5CI" kind="show" identifier="AddPinDetailPage" id="QSd-po-nG5"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="backToSignIn" id="d8v-ZF-2Lt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLn-yj-ftc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,6 +427,6 @@
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fy8-Bm-WDF"/>
+        <segue reference="2uZ-OC-rE6"/>
     </inferredMetricsTieBreakers>
 </document>

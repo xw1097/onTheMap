@@ -64,6 +64,7 @@ class TabBarViewControlelr: UITabBarController {
     private func logOutSuccess() {
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "backToSignIn", sender: self)
         }
     }
 }
