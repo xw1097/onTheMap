@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class StudentInformationTableViewController: UITableViewController {
-    
+    static let CELL_REUSABLE_ID = "StudentInformationTableViewCell"
     @IBAction func refreshLocations(_ sender: Any) {
         self.viewDidLoad();
     }
@@ -43,9 +43,8 @@ class StudentInformationTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellReuseIdentifier = "StudentInformationTableViewCell"
         let student = InMemoryStore.shared.cachedStudentInformations[(indexPath as NSIndexPath).row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! StudentInformationTableCell?
+        let cell = tableView.dequeueReusableCell(withIdentifier: StudentInformationTableViewController.CELL_REUSABLE_ID) as! StudentInformationTableCell?
 
         cell?.nameLabel!.text = student.firstName + " " + student.lastName
         
